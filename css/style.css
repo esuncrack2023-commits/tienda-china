@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(204, 56, 56);
+}
+
+.tittle1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: aliceblue;
+    justify-content: center;
+}
+
+.panel{
+    max-width: 100%;
+    height: 40px;
+    color: aqua;
+
+}
