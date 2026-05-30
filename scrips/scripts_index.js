@@ -35,3 +35,13 @@ document.querySelector(".prev").addEventListener("click", () => {
         });
     }
 });
+
+
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que la página se recargue
+    
+    alert('¡Gracias por comunicarte con Dragón Dorado! Hemos recibido tu mensaje y nos pondremos en contacto contigo muy pronto.');
+    
+    this.reset(); // Limpia el del formulario
+});

@@ -96,7 +96,7 @@ body{
 
 
 
-
+/* Los mas pedido */
 
 .destacados{
     padding:80px 8%;
@@ -243,21 +243,330 @@ body{
 
 
 
+/* PROMOCIONES */
+
 .promociones{
-    padding:50px;
-    text-align:center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
+    background: linear-gradient(135deg,#fff0f0,#fff8e7);
+    text-align: center;
+}
+
+.promociones .promos-container::before{
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,183,3,0.12);
+    border-radius: 50%;
+    filter: blur(100px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+
+.promociones::before{
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(255,183,3,0.18);
+    border-radius: 50%;
+    top: -300px;
+    left: -300px;
+}
+
+.promociones::after{
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: rgba(214,40,40,0.08);
+    border-radius: 50%;
+    bottom: -350px;
+    right: -350px;
+}
+
+.promociones h2{
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    color: #d62828;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 10px rgba(214,40,40,0.2);
+}
+
+.promos-container{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
 }
 
 .promo-card{
-    background:#ffd54f;
-    display:inline-block;
-    padding:25px;
-    border-radius:15px;
-    
+    position: relative;
+    width: 320px;
+    background: #fff;
+    border-radius: 25px;
+    padding: 25px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: all .35s ease;
+    border: 3px solid transparent;
 }
 
+.promo-card::before{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: .7s;
+}
+
+.promo-card:hover::before{
+    top: 100%;
+    left: 100%;
+}
+
+.promo-card:hover{
+    transform: translateY(-12px) scale(1.04);
+    border-color: #ffb703;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.promo-badge{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg,#ffb703,#ffd166);
+    color: #000;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: .9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+.promo-card img{
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    transition: transform .3s;
+}
+
+.promo-card:hover img{
+    transform: scale(1.08);
+}
+
+.promo-card h3{
+    margin: 15px 0;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+.promo-card p{
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.precio{
+    margin: 20px 0;
+}
+
+.precio small{
+    display: block;
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+.precio span{
+    display: block;
+    color: #d62828;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.promo-card button{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#d62828,#ff595e);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.promo-card button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(214,40,40,.35);
+}
+
+
+
+
+
+
+
+
+
+/* REGISTRO */
+.contact-section{
+    min-height: 85vh;
+    padding: 50px 8%;
+
+    background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+    url("../image/efb7d95f-2c73-4490-bf3e-b5fa98d2a077.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+/* Texto del banner */
+
+.banner-text{
+    max-width: 500px;
+    color: white;
+}
+
+.banner-text h1{
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,.4);
+}
+
+.banner-text p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 6px rgba(0,0,0,.4);
+}
+
+/* Formulario */
+
+#contact-form{
+    width: 400px;
+
+    background: rgba(255,255,255,.95);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form h2{
+    color: #610909;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.form-subtitle{
+    text-align: center;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#contact-form input{
+    width: 100%;
+    padding: 14px;
+
+    border: 2px solid #ececec;
+    border-radius: 10px;
+
+    background: #fafafa;
+
+    transition: .3s;
+}
+
+#contact-form input:focus{
+    outline: none;
+    border-color: #610909;
+    background: white;
+}
+
+#contact-form button{
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #8b0000;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#contact-form button:hover{
+    background: #a30000;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 900px){
+
+    .contact-section{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-text h1{
+        font-size: 2.5rem;
+    }
+
+    #contact-form{
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 footer{
-    background:#222;
+    background:#0a0a0a;
     color:white;
     text-align:center;
     padding:20px;
